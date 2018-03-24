@@ -1,0 +1,73 @@
+<div class="example-container mat-elevation-z8" *ngIf="valid()" >
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="balance">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.balance}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef>Actions:</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a mat-button [routerLink]="'/profile/' + element.id">See profile</a>
+        <a mat-button (click)="delete(element.id)" class="mat-accent">Delete</a>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          New user
+        </mat-panel-title>
+        <mat-panel-description>
+          Type the new user's details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <form [formGroup]="newUserForm" novalidate>
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="password" type="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" type="email">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Balance" formControlName="balance">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Role" formControlName="role">
+            <mat-option value="USER">User</mat-option>
+            <mat-option value="MANAGER">Manager</mat-option>
+            <mat-option value="ADMIN">Admin</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-button color="primary" (click)="addAction()">Create</button>
+        </mat-action-row>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>
