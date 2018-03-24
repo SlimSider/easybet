@@ -15,16 +15,26 @@ public class User {
     private String username;
 
     @Column
+    private String email;
+
+    @Column
     private String password;
 
     @Column
     private double balance;
 
-    public User(String username, String password, double balance) {
+    @Column
+    private String role;
+
+    public User(String username, String email, String password, double balance, String role) {
         this.username = username;
+        this.email = email;
         this.password = password;
         this.balance = balance;
+        this.role = role;
     }
+
+    public User() {}
 
     public Long getId() {
         return id;
@@ -56,5 +66,21 @@ public class User {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
