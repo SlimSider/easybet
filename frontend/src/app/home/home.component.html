@@ -1,0 +1,17 @@
+<section>
+  <h1>Welcome to the page!</h1>
+  <div *ngIf="this.authService.getCurrentUsername()">
+    <div class="cards" *ngFor="let info of matchesInfo">
+      <app-match-card [count]="info.count" [type]="info.type"></app-match-card>
+    </div>
+  </div>
+  <div class="text" *ngIf="!this.authService.getCurrentUsername()">
+    <p>As a guest you can check the matches that are in progress.</p>
+    <p>After sign up, you gain acces to your own profile right away!</p>
+    <p>If you've already own a profile, you're just a log in away from winning!</p>
+    <div>
+      <a mat-button class="mat-primary" [routerLink]="'/register'"> Register </a>
+      <a mat-button class="mat-primary" [routerLink]="'/login'"> Log in </a>
+    </div>
+  </div>
+</section>

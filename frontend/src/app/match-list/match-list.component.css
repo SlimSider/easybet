@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+}
+
+.info {
+  text-align: right;
+}
+
+.actions {
+  display: inline-flex;
+}
+
+.description {
+  text-align: center;
+}
+
+.button {
+  margin: 0 auto;
+}

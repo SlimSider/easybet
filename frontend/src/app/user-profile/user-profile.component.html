@@ -1,0 +1,28 @@
+<div *ngIf="this.user">
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <em>Overview</em>
+      </ng-template>
+      <app-user-overview [user]="this.user"></app-user-overview>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>list_view</mat-icon> Bets
+      </ng-template>
+      <app-user-betlist [user]="this.user"></app-user-betlist>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>thumb_down</mat-icon> Request charge
+      </ng-template>
+      <app-balance-charge [user]="this.user"></app-balance-charge>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Update details
+      </ng-template>
+      <app-user-update [user]="this.user"></app-user-update>
+    </mat-tab>
+  </mat-tab-group>
+</div>

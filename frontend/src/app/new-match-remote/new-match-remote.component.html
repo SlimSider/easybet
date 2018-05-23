@@ -1,0 +1,43 @@
+<div>
+  <div class="menu">
+    <mat-error *ngIf="error">{{error}}</mat-error>
+    <p class="text">Give the date and the sport</p>
+    <input matInput class="item" [matDatepicker]="picker"  [min]="minDate" placeholder="Choose a date" (dateInput)="setDate($event)" disabled>
+    <mat-datepicker-toggle class="item" matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker class="item" #picker disabled="false"></mat-datepicker>
+    <mat-select class="item" placeholder="Sport" [(value)] = "sport">
+      <mat-option value="Soccer">Football</mat-option>
+      <mat-option value="Basketball">Basketball</mat-option>
+      <mat-option value="Hockey">Ice Hockey</mat-option>
+      <mat-option value="Rugby">Rugby</mat-option>
+      <mat-option value="Baseball">Baseball</mat-option>
+    </mat-select>
+    <button mat-button color="primary" class="item" [disabled]="!sport || !date" (click)="requestMatches()">See matches</button>
+  </div>
+  <mat-table #table [dataSource]="dataSource" *ngIf="dataSource.data.length">
+    <ng-container matColumnDef="home">
+      <mat-header-cell *matHeaderCellDef> Home </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.home}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="away">
+      <mat-header-cell *matHeaderCellDef> Away </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.away}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="competition">
+      <mat-header-cell *matHeaderCellDef> Competition </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.competition}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="events">
+      <mat-header-cell *matHeaderCellDef> Add </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-raised-button (click)="openDialog(element)">Select</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

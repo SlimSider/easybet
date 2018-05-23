@@ -1,0 +1,39 @@
+<div class="desc">
+  <h1>Match history</h1>
+  <p>Here you can check all the past matches and results</p>
+  <a mat-button class="button" color="primary" (click)="show()">See matches</a>
+</div>
+<mat-table #table [dataSource]="dataSource" *ngIf="dataSource.data.length">
+
+    <ng-container matColumnDef="home">
+      <mat-header-cell *matHeaderCellDef> Home team </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.home}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="away">
+      <mat-header-cell *matHeaderCellDef> Away team </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.away}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="comp">
+      <mat-header-cell *matHeaderCellDef> Competition </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.competition}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="home_score">
+      <mat-header-cell *matHeaderCellDef> Home team score </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.final_home_score}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="away_score">
+      <mat-header-cell *matHeaderCellDef> Away team score </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.final_away_score}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<div class="desc" *ngIf="error">
+  <mat-error>There's no finished match</mat-error>
+</div>
+

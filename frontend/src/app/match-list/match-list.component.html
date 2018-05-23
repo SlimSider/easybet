@@ -1,0 +1,59 @@
+<div class="description" *ngIf="this.betting">
+  <h1>Match list</h1>
+  <p>Below you can check out the matches with the events. Place some bets!</p>
+</div>
+<div class="description">
+  <a mat-button class="mat-warn" (click)="show()">See matches</a>
+  <mat-error *ngIf="error"> There's no active match </mat-error>
+</div>
+<button mat-button color="warn" *ngIf="this.betting" [disabled]="this.eventProps.size == 0" (click)="openDialog()">Place bet</button>
+<mat-list>
+  <div *ngFor="let match of dataSource">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-list-item>
+          <a style="cursor: pointer;">
+            <h4 mat-line>{{match.home}}  against  {{match.away}}  |  {{match.sport}} match</h4>
+          </a>
+        </mat-list-item>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item *ngIf="!this.betting">
+          <p mat-line>Actions</p>
+          <div class = "actions">
+            <a mat-button color="primary" (click)="endMatch(match)">End match</a>
+            <a mat-button color="primary" (click)="addEventToMatch(match)">Add new event</a>
+            <a mat-button color="warn"(click)="deleteMatch(match)">Delete match</a>
+          </div>
+        </mat-list-item>
+        <mat-list-item>
+          <p mat-line>  </p>
+            <div style="display: inline-flex; width: 125px">
+              <p >Home|</p>
+              <p >Draw|</p>
+              <p >Away</p>
+            </div>
+        </mat-list-item>
+        <mat-list-item *ngFor="let event of match.events">
+            <p mat-line> Event's type is: {{event.type.toLowerCase().replace("_", " ")}} </p>
+            <div *ngIf="this.betting">
+              <mat-button-toggle-group #group="matButtonToggleGroup">
+                <button mat-button color="warn" *ngIf="eventProps.has(event)" (click)="clearEvent(event)">Clear this event</button>
+                <mat-button-toggle mat-button color="warn" (click)="addEvent(event, event.homeOdds, 'home')">{{event.homeOdds}}</mat-button-toggle>
+                <mat-button-toggle mat-button color="warn" (click)="addEvent(event, event.drawOdds, 'draw')">{{event.drawOdds}}</mat-button-toggle>
+                <mat-button-toggle mat-button color="warn" (click)="addEvent(event, event.awayOdds, 'away')">{{event.awayOdds}}</mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+            <div *ngIf="!this.betting">
+              <mat-button-toggle-group #group="matButtonToggleGroup" disabled="true">
+                <a mat-button class="mat-warn" (click)="deleteEvent(match, event)">Delete event</a>
+                <mat-button-toggle mat-button color="warn" >{{event.homeOdds}}</mat-button-toggle>
+                <mat-button-toggle mat-button color="warn">{{event.drawOdds}}</mat-button-toggle>
+                <mat-button-toggle mat-button color="warn">{{event.awayOdds}}</mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </div>
+</mat-list>

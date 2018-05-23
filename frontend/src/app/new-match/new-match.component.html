@@ -1,0 +1,27 @@
+<form [formGroup]="newMatchForm">
+<mat-error>{{error}}</mat-error>
+  <mat-form-field>
+    <input matInput placeholder="Home team" formControlName="home">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Away team" formControlName="away">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Competition" formControlName="competition">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Sport" formControlName="sport">
+      <mat-option value="Football">Football</mat-option>
+      <mat-option value="Basketball">Basketball</mat-option>
+      <mat-option value="Hockey">Hockey</mat-option>
+      <mat-option value="Baseball">Baseball</mat-option>
+      <mat-option value="Rugby">Rugby</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <input matInput [matDatepicker]="picker" [min]="minDate" placeholder="" (dateInput)="setDate($event)" disabled>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker disabled="false"></mat-datepicker>
+  <mat-action-row>
+    <button mat-button color="primary" [disabled]="newMatchForm.invalid" (click)="openDialog()">Create</button>
+  </mat-action-row>
+</form>

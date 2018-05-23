@@ -1,0 +1,85 @@
+<div class="content">
+  <h1>User management</h1>
+  <p>Below you can check all the current users of the page. In addition, you can add other users.</p>
+  <p>Also, you have full control of the manager and player profiles.</p>
+  <div class="example-container mat-elevation-z8">
+    <div class="buttons">
+      <a mat-button (click)="update()" color="accent">See users</a>
+      <a mat-button (click)="hide()" color="warn">Hide users</a>
+    </div>
+    <mat-table #table [dataSource]="dataSource" *ngIf="dataSource.data.length">
+
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="balance">
+        <mat-header-cell *matHeaderCellDef> Balance </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.balance}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef> Role </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.role.toLowerCase()}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef>Actions:</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div *ngIf="element.role !== 'ADMIN'">
+            <a mat-button (click)="editUser(element)">Modify user</a>
+            <a mat-button *ngIf="element.role == 'PLAYER'" (click)="seeBets(element)">See bet history</a>
+            <a mat-button (click)="delete(element.id)" class="mat-accent">Delete</a>
+          </div>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-accordion>
+      <mat-expansion-panel hideToggle = "true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            New user
+          </mat-panel-title>
+          <mat-panel-description>
+            Type the new user's details
+          </mat-panel-description>
+          <mat-error *ngIf="error">{{error}}</mat-error>
+        </mat-expansion-panel-header>
+        <form [formGroup]="newUserForm">
+          <mat-form-field>
+            <input matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Password" formControlName="password" type="password">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" type="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Balance" formControlName="balance">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Role" formControlName="role">
+              <mat-option value="PLAYER">User</mat-option>
+              <mat-option value="MANAGER">Manager</mat-option>
+              <mat-option value="ADMIN">Admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-action-row>
+            <button mat-button color="primary" [disabled]="newUserForm.invalid" (click)="addUser()">Create</button>
+          </mat-action-row>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+</div>

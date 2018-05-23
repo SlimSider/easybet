@@ -1,0 +1,39 @@
+<h1>Bet history</h1>
+  <mat-table #table [dataSource]="dataSource" *ngIf="dataSource.data.length">
+
+    <ng-container matColumnDef="stake">
+      <mat-header-cell *matHeaderCellDef> Stake </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.stake}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="odds">
+      <mat-header-cell *matHeaderCellDef> Odds </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.odds}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="won">
+      <mat-header-cell *matHeaderCellDef> Won </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.won}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="in progress">
+      <mat-header-cell *matHeaderCellDef> In progress </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.active}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="return">
+      <mat-header-cell *matHeaderCellDef> Possible profit </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.stake * element.odds}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a mat-button color="warn" (click)="deleteBet(element)"> Delete </a>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+<p *ngIf="!dataSource.data.length">This player does not have any bets</p>

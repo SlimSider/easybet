@@ -1,0 +1,11 @@
+<div class="content">
+  <h1>Profile overview</h1>
+  <h2>Match statistics</h2>
+  <div class="charts" *ngIf="!this.empty">
+    <table>
+      <td><canvas id="matchChart"> {{matchChart}} </canvas></td>
+      <td><canvas id="eventChart"> {{eventChart}} </canvas></td>
+    </table>
+  </div>
+  <p *ngIf="this.empty"> There's no match yet.</p>
+</div>

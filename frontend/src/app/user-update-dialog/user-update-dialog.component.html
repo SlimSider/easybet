@@ -1,0 +1,32 @@
+<div class="content">
+  <h1>User update</h1>
+  <p>Update the selected user's details. Leave blank what you wouldn't like to modify</p>
+  <form [formGroup]="userForm">
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="username">
+      <mat-hint>current : {{this.data.user.username}}</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password" type="password">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" type="email">
+      <mat-hint>current : {{this.data.user.email}}</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Balance" formControlName="balance">
+      <mat-hint>current : {{this.data.user.balance}}</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Role" formControlName="role">
+        <mat-option value="PLAYER">User</mat-option>
+        <mat-option value="MANAGER">Manager</mat-option>
+        <mat-option value="ADMIN">Admin</mat-option>
+      </mat-select>
+      <mat-hint>current : {{this.data.user.role.toLowerCase()}}</mat-hint>
+    </mat-form-field>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="done()">Create</button>
+    </mat-action-row>
+  </form>
+</div>

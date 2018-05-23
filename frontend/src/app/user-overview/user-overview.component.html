@@ -1,0 +1,11 @@
+<div class="content">
+  <h1>Profile overview</h1>
+  <h2>Bet statistics</h2>
+  <div class="charts" *ngIf="this.user.getBets().length">
+    <table>
+      <td><canvas id="moneyChart"> {{moneyChart}} </canvas></td>
+      <td><canvas id="betChart"> {{betChart}} </canvas></td>
+    </table>
+  </div>
+  <p *ngIf="!this.user.getBets().length"> You have not placed any bets yet.</p>
+</div>

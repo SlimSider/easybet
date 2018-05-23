@@ -1,0 +1,22 @@
+<div class="content">
+  <h1>Update your details</h1>
+  <p>You just need to fill those fields that you'd like to change. The rest stays as they are now.</p>
+  <form [formGroup]="userForm" novalidate>
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="username">
+      <mat-hint>current: {{this.user.username}}</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password" type="password">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" type="email">
+      <mat-hint>current: {{this.user.email}}</mat-hint>
+    </mat-form-field>
+    <mat-action-row>
+      <button mat-button color="primary" [disabled]="!(userForm.get('username').value || userForm.get('password').value
+                                                      || userForm.get('email').value)" (click)="done()">Update</button>
+    </mat-action-row>
+  </form>
+</div>
+

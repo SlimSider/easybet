@@ -1,0 +1,62 @@
+<div class="content">
+  <h1>New event</h1>
+  <p>Give the details to create a new event for the selected match</p>
+  <mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Declare the event's type</ng-template>
+          <mat-form-field>
+            <mat-select placeholder="Event type" [(value)]="type">
+              <mat-option *ngIf = "!this.forbidden.includes('FINAL_TIME')" value="FINAL_TIME">Final Time</mat-option>
+              <mat-option *ngIf = "!this.forbidden.includes('HALF_TIME') && ['Basketball','Football'].includes(this.data.match.sport)" value="HALF_TIME">Half Time</mat-option>
+              <mat-option value="UNDER_OVER">Score under/over</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div *ngIf="type == 'UNDER_OVER'">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Goal line" formControlName="score">
+              <mat-hint>This means the final time score.</mat-hint>
+            </mat-form-field>
+          </div>
+        <div>
+          <button mat-button matStepperNext [disabled]="type == 'UNDER_OVER' ? firstFormGroup.invalid : !type" >Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel aria-disabled="true">Declare the event's odds</ng-template>
+        <div class="page-body">
+          <h2 class="mat-h2">Odds</h2>
+            <div class="form-control">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Home Odds" formControlName="home">
+              </mat-form-field>
+            </div>
+
+            <div class="form-control">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Draw Odds" formControlName="draw">
+              </mat-form-field>
+            </div>
+
+            <div class="form-control">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Away Odds" formControlName="away">
+              </mat-form-field>
+            </div>
+        </div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext [disabled]="secondFormGroup.invalid" (click)="addEvent()">Next</button>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button (click)="done()">Done</button>
+        <button mat-button (click)="reset(stepper)">Add another event</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

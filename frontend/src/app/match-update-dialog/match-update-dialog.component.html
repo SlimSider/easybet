@@ -1,0 +1,34 @@
+ <form [formGroup]="formGroup">
+      <ng-template matStepLabel aria-disabled="true">Fill out the results</ng-template>
+      <div class="page-body">
+        <h2 class="mat-h2">Odds</h2>
+        <div *ngIf="this.match.sport == 'Football' || this.match.sport == 'Basketball'">
+          <div  class="form-control">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Home HT Score" formControlName="ht_h">
+            </mat-form-field>
+          </div>
+
+          <div class="form-control">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Away HT Score" formControlName="ht_a">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="form-control">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Home FT Score" formControlName="ft_h">
+          </mat-form-field>
+        </div>
+
+        <div class="form-control">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Away FT Score" formControlName="ft_a">
+          </mat-form-field>
+        </div>
+      </div>
+    <div>
+      <button mat-button [disabled]="formGroup.get('ft_h').invalid || formGroup.get('ft_a').invalid || formGroup.get('ht_a').value > formGroup.get('ft_a').value || formGroup.get('ht_h').value > formGroup.get('ft_h').value" (click)="done()">Done</button>
+    </div>
+ </form>

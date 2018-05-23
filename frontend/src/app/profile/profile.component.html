@@ -1,0 +1,5 @@
+<div *ngIf="this.user">
+  <app-user-profile *ngIf="this.authService.getCurrentUserRole() == 'PLAYER'" [user] = "this.user"></app-user-profile>
+  <app-manager-profile *ngIf="this.authService.getCurrentUserRole() == 'MANAGER'" [user] = "this.user"></app-manager-profile>
+  <app-admin-profile *ngIf="this.authService.getCurrentUserRole() == 'ADMIN'" [user] = "this.user"></app-admin-profile>
+</div>

@@ -1,0 +1,13 @@
+<div class="content">
+  <h1>Match management</h1>
+  <p>You have full control of the created matches, check them out</p>
+</div>
+<app-match-list [betting]="false"></app-match-list>
+<h2 class="content">Add new matches</h2>
+<div class="buttons">
+  <mat-button-toggle mat-button color="warn" (click)="setOption('manual')">New match manually</mat-button-toggle>
+  <mat-button-toggle mat-button color="warn" (click)="setOption('server')">New match from server</mat-button-toggle>
+  <mat-button-toggle mat-button color="warn" (click)="setOption(null)">Hide</mat-button-toggle>
+</div>
+<app-new-match *ngIf="this.option == 'manual'"></app-new-match>
+<app-new-match-remote *ngIf="this.option == 'server'"></app-new-match-remote>

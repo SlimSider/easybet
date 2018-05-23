@@ -1,0 +1,25 @@
+#top-menu {
+  margin-bottom: 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+mat-toolbar {
+  justify-content: flex-end;
+}
+
+.center {
+  flex: 1 1 auto;
+}
+
+span {
+  font-size: 70%;
+}
+
+.navbar-info{
+  display: inline;
+  font-size: 60%;
+}
+
+div.loading{
+  z-index: 1;
+}

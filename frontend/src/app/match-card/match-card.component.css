@@ -1,0 +1,5 @@
+.mat-card {
+  flex: 1;
+  background-color: lightblue;
+  height: 12em;
+}

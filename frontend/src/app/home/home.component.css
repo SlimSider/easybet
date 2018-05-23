@@ -1,0 +1,9 @@
+.cards {
+  display: inline-flex;
+  width: 12%;
+  margin: 25px;
+}
+
+section {
+  text-align: center;
+}

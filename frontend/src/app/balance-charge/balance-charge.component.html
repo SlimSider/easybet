@@ -1,0 +1,8 @@
+<div class="content">
+  <h1>Request charge</h1>
+  <h2>If you're short on money, you can request here more of it!</h2>
+  <mat-form-field class="example-full-width">
+    <input matInput #balance placeholder="Money to request">
+  </mat-form-field>
+  <a mat-button color="warn" (click)="getMoney(balance.value)">Send request</a>
+</div>

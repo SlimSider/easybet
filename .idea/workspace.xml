@@ -1,0 +1,1941 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="17f6b9ba-715b-43cf-b772-9a9160ecaaa0" name="Default" comment="Initial commit of the Angular app">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/controller/MatchController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/exceptions/ExceptionHandlerAdvice.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/exceptions/IllegalPersistanceException.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/exceptions/NoMatchFoundException.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/Bet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/BaseballMatch.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/BasketballMatch.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/HockeyMatch.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/RugbyMatch.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/repository/BetRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/BetService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/util/sportsdb/SportsDbComponent.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/util/sportsdb/SportsDbParser.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/controller/MatchControllerTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/controller/UserControllerTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/BetServiceTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/EventServiceTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/MatchServiceTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/UserServiceTest.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_11_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_20.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/easybet.iml" afterPath="$PROJECT_DIR$/easybet.iml" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/.angular-cli.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/.editorconfig" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/e2e/app.e2e-spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/e2e/app.po.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/e2e/tsconfig.e2e.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/karma.conf.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/protractor.conf.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/app.component.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/app.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/app.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/app.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/app.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/error/error.component.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/error/error.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/error/error.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/error/error.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/home/home.component.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/home/home.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/home/home.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/home/home.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/login/login.component.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/login/login.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/login/login.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/login/login.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/material.module.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/model/event.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/model/match/match.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/model/user.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/register/register.component.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/register/register.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/register/register.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/register/register.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/api.service.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/api.service.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/auth.service.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/auth.service.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/interceptor.service.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/interceptor.service.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/token.service.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/token.service.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/user.service.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/service/user.service.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/user-list/user-list.component.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/user-list/user-list.component.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/user-list/user-list.component.spec.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/app/user-list/user-list.component.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/assets/.gitkeep" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/environments/environment.prod.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/environments/environment.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/main.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/polyfills.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/styles.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/test.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/tsconfig.app.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/tsconfig.spec.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/src/typings.d.ts" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/tsconfig.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/frontend/easybet-ui/tslint.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/EasybetApplication.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/EasybetApplication.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/controller/EventAPI.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/controller/FootballAPI.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/controller/MatchAPI.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/controller/UserAPI.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/Event.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/Event.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/FootballMatch.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/FootballMatch.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/Match.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/match/Match.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/repository/UserRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/JWTAuthenticationFilter.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/JWTAuthenticationFilter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/JWTAuthorizationFilter.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/JWTAuthorizationFilter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/WebSecurity.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/WebSecurity.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/EventService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/EventService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/FootballService.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/MatchService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/MatchService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/UserService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/util/UserDetailsServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/UserDetailsServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="JAVA/edu.slimsider.easybet.controller.UserController" pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/edu.slimsider.easybet.controller.UserController">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>edu.slimsider.easybet.controller.UserController</OriginalElement>
+              <nodes>
+                <node x="0.0" y="0.0">edu.slimsider.easybet.controller.UserController</node>
+              </nodes>
+              <notes />
+              <edges />
+              <settings layout="Hierarchic Group" zoom="1.0" x="-390.0" y="72.0" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Methods</Category>
+              </Categories>
+              <SCOPE>Default</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="match-history.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="match-history.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/profile/profile.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/profile/profile.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-management.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/user-management/user-management.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="46" column="22" lean-forward="false" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user-management.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/user-management/user-management.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="match-update-dialog.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/match-update-dialog/match-update-dialog.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="event-dialog.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/event-dialog/event-dialog.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ticket-dialog.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/ticket-dialog/ticket-dialog.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Authentincation failed: Bad credentials</find>
+      <find>ib0</find>
+      <find>wrapper</find>
+      <find>logo</find>
+      <find>Match</find>
+      <find>openpanel</find>
+      <find>sport</find>
+      <find>_</find>
+      <find>sndq</find>
+      <find>events</find>
+      <find>get</find>
+      <find>status</find>
+      <find>100</find>
+      <find>bet/</find>
+      <find>this.userService.getUserby</find>
+      <find>Tennis</find>
+      <find>&quot;HT&quot;</find>
+      <find>USER</find>
+      <find>This user</find>
+      <find>User</find>
+      <find>new User</find>
+      <find>event</find>
+      <find>3</find>
+      <find>bet</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Event</replace>
+      <replace>Bet</replace>
+      <replace>ht</replace>
+      <replace>get</replace>
+      <replace>active</replace>
+      <replace>Match</replace>
+      <replace>new FootballMatch</replace>
+      <replace>match</replace>
+      <replace>&quot;Barcelona&quot;</replace>
+      <replace>&quot;test&quot;</replace>
+      <replace>event</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/frontend/src/app/service/auth.service.spec.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/service/match.service.spec.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/service/user.service.spec.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/service/api.service.spec.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/event-dialog/event-dialog.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/error/error.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/error/error.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-bet-list-dialog/user-bet-list-dialog.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-bet-list-dialog/user-bet-list-dialog.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-betlist/user-betlist.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/bet-details-dialog/bet-details-dialog.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/bet-details-dialog/bet-details-dialog.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-betlist/user-betlist.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-betlist/user-betlist.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/event-dialog/event-dialog.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/admin-overview/admin-overview.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-overview/user-overview.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/manager-overview/manager-overview.component.html" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/WebSecurity.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/home/home.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/new-match-remote/new-match-remote.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/new-match-remote/new-match-remote.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/new-match/new-match.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/new-match/new-match.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/new-match/new-match.component.css" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/MatchService.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/event-dialog/event-dialog.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-list/match-list.component.css" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-update-dialog/match-update-dialog.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-update-dialog/user-update-dialog.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-update/user-update.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-update-dialog/match-update-dialog.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/service/api.service.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-list/match-list.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-list/match-list.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/home/home.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/register/register.component.ts" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/UserServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/EventServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/BetServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/controller/MatchControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/MatchServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/controller/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/profile/profile.component.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-management/user-management.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/user-management/user-management.component.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/frontend/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1426" />
+    <option name="y" value="176" />
+    <option name="width" value="1378" />
+    <option name="height" value="733" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-overview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="admin-profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="balance-charge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="bet-details-dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="chart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="error" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="event-dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="manager-overview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="manager-profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="match-card" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="match-history" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="match-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="match-management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="match-update-dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="new-match" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="new-match-remote" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="ticket-dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user-bet-list-dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user-betlist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user-management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user-overview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user-profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user-update" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="user-update-dialog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="match" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easybet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="easybet" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="SearchEverywhereHistoryKey" value="indigo-pink&#9;null&#9;null" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="edu.slimsider.easybet.service" />
+      <recent name="edu.slimsider.easybet.controller" />
+      <recent name="edu.slimsider.easybet.repository" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Y:\OwnDevelopements\final\easybet\frontend\src\app\service" />
+      <recent name="Y:\OwnDevelopements\final\easybet\frontend\easybet-ui\src\app\model\enums" />
+      <recent name="Y:\OwnDevelopements\final\easybet\frontend\easybet-ui\src\app\chart" />
+      <recent name="Y:\OwnDevelopements\final\easybet\frontend\easybet-ui\src\app\model\match" />
+      <recent name="Y:\OwnDevelopements\final\easybet\frontend\easybet-ui\src\app\service" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EasybetApplication">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="All in easybet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="easybet" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="UserControllerTest.create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.slimsider.easybet.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="easybet" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.slimsider.easybet.controller" />
+      <option name="MAIN_CLASS_NAME" value="edu.slimsider.easybet.controller.UserControllerTest" />
+      <option name="METHOD_NAME" value="create" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="UserControllerTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.slimsider.easybet.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="easybet" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.slimsider.easybet.controller" />
+      <option name="MAIN_CLASS_NAME" value="edu.slimsider.easybet.controller.UserControllerTest" />
+      <option name="METHOD_NAME" value="update" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="UserServiceTest.payOut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.slimsider.easybet.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="easybet" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.slimsider.easybet.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.slimsider.easybet.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="payOut" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="UserServiceTest.resetUserBalance" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.slimsider.easybet.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="easybet" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.slimsider.easybet.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.slimsider.easybet.service.UserServiceTest" />
+      <option name="METHOD_NAME" value="resetUserBalance" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration name="EasybetApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.slimsider.easybet.EasybetApplication" />
+      <module name="easybet" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.EasybetApplication" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UserServiceTest.resetUserBalance" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.UserServiceTest.payOut" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.UserControllerTest.update" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UserControllerTest.create" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.All in easybet" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserControllerTest.update" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in easybet" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserControllerTest.create" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.UserServiceTest.payOut" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UserServiceTest.resetUserBalance" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17f6b9ba-715b-43cf-b772-9a9160ecaaa0" name="Default" comment="" />
+      <created>1518817680972</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1518817680972</updated>
+      <workItem from="1518817713265" duration="3175000" />
+      <workItem from="1519072463669" duration="2510000" />
+      <workItem from="1519298123396" duration="7283000" />
+      <workItem from="1519387798147" duration="6352000" />
+      <workItem from="1519476684225" duration="10419000" />
+      <workItem from="1519768102410" duration="1991000" />
+      <workItem from="1519903827862" duration="30661000" />
+      <workItem from="1520507396484" duration="23712000" />
+      <workItem from="1520706138604" duration="18283000" />
+      <workItem from="1520767780113" duration="10521000" />
+      <workItem from="1520880859896" duration="8704000" />
+      <workItem from="1520957027046" duration="8655000" />
+      <workItem from="1521018731317" duration="216000" />
+      <workItem from="1521050469949" duration="40190000" />
+      <workItem from="1521227598543" duration="13009000" />
+      <workItem from="1521319098770" duration="4601000" />
+      <workItem from="1521367841016" duration="15713000" />
+      <workItem from="1521446523028" duration="569000" />
+      <workItem from="1521562260983" duration="6860000" />
+      <workItem from="1521739190818" duration="6716000" />
+      <workItem from="1521894391515" duration="22582000" />
+      <workItem from="1521979159353" duration="4688000" />
+      <workItem from="1522417406669" duration="12463000" />
+      <workItem from="1522678794460" duration="16103000" />
+      <workItem from="1522923461544" duration="9894000" />
+      <workItem from="1523345426413" duration="9000" />
+      <workItem from="1523379361215" duration="749000" />
+      <workItem from="1523454830835" duration="18362000" />
+      <workItem from="1523553904677" duration="13048000" />
+      <workItem from="1523625242894" duration="6352000" />
+      <workItem from="1523639490960" duration="17617000" />
+      <workItem from="1523969064149" duration="13430000" />
+      <workItem from="1524079196183" duration="627000" />
+      <workItem from="1524132551429" duration="3885000" />
+      <workItem from="1524237366189" duration="12307000" />
+      <workItem from="1524301484055" duration="16138000" />
+      <workItem from="1524387158485" duration="15892000" />
+      <workItem from="1524473998055" duration="8473000" />
+      <workItem from="1524484280668" duration="7580000" />
+      <workItem from="1524588182183" duration="1386000" />
+      <workItem from="1524753751294" duration="8699000" />
+      <workItem from="1524821364578" duration="12955000" />
+      <workItem from="1524897602490" duration="3654000" />
+      <workItem from="1524984301107" duration="7936000" />
+      <workItem from="1525001255461" duration="9069000" />
+      <workItem from="1525024032548" duration="85000" />
+      <workItem from="1525094477625" duration="6442000" />
+      <workItem from="1525158462888" duration="8802000" />
+      <workItem from="1525182196932" duration="11781000" />
+      <workItem from="1525286863376" duration="7059000" />
+      <workItem from="1525341302951" duration="21631000" />
+      <workItem from="1525429791302" duration="6419000" />
+      <workItem from="1525437527601" duration="4515000" />
+      <workItem from="1525447805694" duration="19104000" />
+      <workItem from="1525505518806" duration="20511000" />
+      <workItem from="1525531656780" duration="31447000" />
+      <workItem from="1525715305650" duration="15463000" />
+      <workItem from="1525802167595" duration="2384000" />
+      <workItem from="1525848228545" duration="13904000" />
+      <workItem from="1525865495958" duration="9843000" />
+      <workItem from="1526022520315" duration="7246000" />
+      <workItem from="1526322486781" duration="23111000" />
+      <workItem from="1526657246339" duration="29393000" />
+      <workItem from="1526803721833" duration="87709000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit of easybet">
+      <created>1518821874518</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518821874518</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial implementation of JWT in easybet">
+      <created>1519574010610</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1519574010611</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial commit of the Angular app">
+      <created>1519768291599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519768291599</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_easybet - 2018.05.22 at 10h 21m 14s.xml">
+      <configuration name="All in easybet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_easybet - 2018.05.22 at 10h 23m 52s.xml">
+      <configuration name="All in easybet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_create - 2018.05.22 at 09h 59m 34s.xml">
+      <configuration name="UserControllerTest.create" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_update - 2018.05.22 at 09h 59m 04s.xml">
+      <configuration name="UserControllerTest.update" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_update - 2018.05.22 at 10h 29m 05s.xml">
+      <configuration name="UserControllerTest.update" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserControllerTest_update - 2018.05.22 at 11h 35m 46s.xml">
+      <configuration name="UserControllerTest.update" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserServiceTest_payOut - 2018.05.21 at 17h 26m 02s.xml">
+      <configuration name="UserServiceTest.payOut" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserServiceTest_resetUserBalance - 2018.05.21 at 17h 19m 54s.xml">
+      <configuration name="UserServiceTest.resetUserBalance" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserServiceTest_resetUserBalance - 2018.05.21 at 17h 22m 05s.xml">
+      <configuration name="UserServiceTest.resetUserBalance" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserServiceTest_resetUserBalance - 2018.05.21 at 17h 24m 21s.xml">
+      <configuration name="UserServiceTest.resetUserBalance" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="790887000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35213676" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39511654" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263041" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22197558" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16870144" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14818764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50610435" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Initial commit of easybet" />
+    <MESSAGE value="Initial implementation of JWT in easybet" />
+    <MESSAGE value="Initial commit of the Angular app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit of the Angular app" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/easybet-ui/src/app/match-manager/match-manager.component.ts</url>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/easybet-ui/src/app/user-betlist/user-betlist.component.ts</url>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/MatchService.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="94" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/user-update-dialog/user-update-dialog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/user-update/user-update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#55#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/match-update-dialog/match-update-dialog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/user-overview/user-overview.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/service/api.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="76" lean-forward="false" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/register/register.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/WebSecurity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/JWTAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="73" column="135" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/security/JWTAuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="68" column="24" lean-forward="false" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/slimsider/easybet/exceptions/ExceptionHandlerAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/admin-profile/admin-profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/admin-profile/admin-profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/material.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/user-profile/user-profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/match-list/match-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/match-list/match-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/event-dialog/event-dialog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="49" column="48" lean-forward="true" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/EventServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="79" column="22" lean-forward="false" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/BetServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/controller/MatchControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/service/MatchServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="973">
+          <caret line="79" column="34" lean-forward="true" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/slimsider/easybet/controller/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.model.match.Match">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.model.match.Match</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">edu.slimsider.easybet.model.match.Match</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-450.0" y="219.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>Default</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.model.Bet">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.model.Bet</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">edu.slimsider.easybet.model.Bet</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-445.5" y="186.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>Default</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.model.Event">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.model.Event</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">edu.slimsider.easybet.model.Event</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-450.0" y="186.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>Default</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.model.User">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.model.User</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">edu.slimsider.easybet.model.User</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-457.0" y="186.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>Default</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.service.UserService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.service.UserService</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">edu.slimsider.easybet.service.UserService</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-443.5" y="94.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>Default</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.service.MatchService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.service.MatchService</OriginalElement>
+          <nodes>
+            <node x="0.0" y="102.0">edu.slimsider.easybet.service.MatchService</node>
+            <node x="117.5" y="0.0">org.springframework.stereotype.Service</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="edu.slimsider.easybet.service.MatchService" target="org.springframework.stereotype.Service">
+              <point x="0.0" y="-235.5" />
+              <point x="0.0" y="26.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-371.0" y="204.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.service.EventService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.service.EventService</OriginalElement>
+          <nodes>
+            <node x="0.0" y="102.0">edu.slimsider.easybet.service.EventService</node>
+            <node x="51.5" y="0.0">org.springframework.stereotype.Service</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="edu.slimsider.easybet.service.EventService" target="org.springframework.stereotype.Service">
+              <point x="0.0" y="-114.5" />
+              <point x="0.0" y="26.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-437.0" y="83.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.service.BetService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.service.BetService</OriginalElement>
+          <nodes>
+            <node x="39.5" y="0.0">org.springframework.stereotype.Service</node>
+            <node x="0.0" y="102.0">edu.slimsider.easybet.service.BetService</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="edu.slimsider.easybet.service.BetService" target="org.springframework.stereotype.Service">
+              <point x="0.0" y="-81.5" />
+              <point x="0.0" y="26.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-449.0" y="50.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.controller.MatchController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.controller.MatchController</OriginalElement>
+          <nodes>
+            <node x="0.0" y="256.0">edu.slimsider.easybet.controller.MatchController</node>
+            <node x="200.75" y="0.0">org.springframework.web.bind.annotation.RequestMapping</node>
+            <node x="39.75" y="77.0">org.springframework.web.bind.annotation.RestController</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="edu.slimsider.easybet.controller.MatchController" target="org.springframework.web.bind.annotation.RequestMapping">
+              <point x="104.75" y="-92.5" />
+              <point x="314.25" y="231.0" />
+              <point x="308.75" y="231.0" />
+              <point x="0.0" y="103.0" />
+            </edge>
+            <edge source="edu.slimsider.easybet.controller.MatchController" target="org.springframework.web.bind.annotation.RestController">
+              <point x="-104.75" y="-92.5" />
+              <point x="104.75" y="231.0" />
+              <point x="110.25" y="231.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-349.5" y="138.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/edu.slimsider.easybet.controller.UserController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>edu.slimsider.easybet.controller.UserController</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">edu.slimsider.easybet.controller.UserController</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-390.0" y="72.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>Default</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/match-history/match-history.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/profile/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/ticket-dialog/ticket-dialog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/match-update-dialog/match-update-dialog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/event-dialog/event-dialog.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/user-management/user-management.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/user-management/user-management.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="46" column="22" lean-forward="false" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>easybet</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

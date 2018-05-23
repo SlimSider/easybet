@@ -1,0 +1,20 @@
+<h1>Bet details</h1>
+<p>The selected bet contains of these events below</p>
+<mat-list>
+  <div *ngFor="let match of data.matches">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-list-item>
+          <a style="cursor: pointer;">
+            <h4 mat-line>{{match.home}}  against  {{match.away}}  |  {{match.sport}} match</h4>
+          </a>
+        </mat-list-item>
+      </mat-expansion-panel-header>
+      <mat-list>
+        <mat-list-item *ngFor="let event of match.events">
+          <p mat-line> Events: {{event.type.toLowerCase().replace("_", " ")}} </p>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </div>
+</mat-list>

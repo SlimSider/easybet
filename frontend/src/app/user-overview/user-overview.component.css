@@ -1,0 +1,13 @@
+.charts {
+  display: inline-table;
+  height: 5em;
+  align-content: center;
+}
+
+.content {
+  text-align: center;
+}
+
+table {
+  margin: 3em;
+}

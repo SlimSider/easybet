@@ -1,0 +1,17 @@
+<button mat-button color="warn" [disabled]="form.invalid" (click)="done()">Place bet</button>
+  <br>
+  <form [formGroup]="form" novalidate>
+    <div class="form-control">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Stake" formControlName="stake">
+        <mat-hint> The stake that you'd like to play with </mat-hint>
+      </mat-form-field>
+    </div>
+  </form>
+<mat-list>
+    <div>
+      <p mat-line>You selected {{events.size}} event</p>
+      <p mat-line>Total odds is {{odds}}</p>
+      <p mat-line>Possible profit is {{odds * form.get('stake').value}}</p>
+    </div>
+</mat-list>

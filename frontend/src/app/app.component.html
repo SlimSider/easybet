@@ -1,0 +1,43 @@
+<block-ui>
+  <div class="content">
+    <nav>
+      <mat-toolbar id="top-menu" color="primary">
+        <div class="left-side">
+          <h1 class="mat-h1">Easybet</h1>
+        </div>
+
+        <div class="center">
+          <div *ngIf="this.authService.getCurrentUserRole() == 'PLAYER'">
+            <a mat-button *ngFor="let menu of user_menu" [routerLink]="menu.link" routerLinkActive="active">{{menu.title}}</a>
+          </div>
+          <div *ngIf="this.authService.getCurrentUserRole() == 'MANAGER'">
+            <a mat-button *ngFor="let menu of manager_menu" [routerLink]="menu.link" routerLinkActive="active">{{menu.title}}</a>
+          </div>
+          <div *ngIf="this.authService.getCurrentUserRole() == 'ADMIN'">
+            <a mat-button *ngFor="let menu of admin_menu" [routerLink]="menu.link" routerLinkActive="active">{{menu.title}}</a>
+          </div>
+          <div *ngIf="!this.authService.getCurrentUserRole()">
+            <a mat-button *ngFor="let menu of guest_menu" [routerLink]="menu.link" routerLinkActive="active">{{menu.title}}</a>
+          </div>
+        </div>
+
+        <div class="right-side">
+          <div *ngIf="!authService.getCurrentUsername()">
+            <a mat-button routerLink="/login" routerLinkActive="active">Login</a>|
+            <a mat-button routerLink="/register" routerLinkActive="active">Register</a>
+          </div>
+          <div *ngIf="authService.getCurrentUsername()">
+            <span class="navbar-info">
+              <a
+                mat-button [routerLink]="'dashboard/' + this.authService.getCurrentUsername()" routerLinkActive="active" >Welcome, {{this.authService.getCurrentUsername()}}!
+                <a *ngIf="this.authService.getCurrentUserRole() == 'PLAYER'"> (Balance: {{this.authService.getCurrentUserBalance()}})</a>
+              </a>
+            </span>
+            <a mat-button (click)="logout()">Logout</a>
+          </div>
+        </div>
+      </mat-toolbar>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</block-ui>
