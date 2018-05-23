@@ -1,0 +1,5 @@
+export enum Type {
+  FINAL_TIME = 'FINAL_TIME',
+  HALF_TIME = 'HALF_TIME',
+  UNDER_OVER = 'UNDER_OVER'
+}

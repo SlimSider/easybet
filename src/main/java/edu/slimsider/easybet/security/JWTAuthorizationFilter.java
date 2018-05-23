@@ -1,17 +1,13 @@
 package edu.slimsider.easybet.security;
 
 import edu.slimsider.easybet.model.User;
-import edu.slimsider.easybet.repository.UserRepository;
 import edu.slimsider.easybet.service.UserService;
-import edu.slimsider.easybet.util.UserDetailsServiceImpl;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
@@ -20,12 +16,13 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
-import java.util.*;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.UUID;
 
 import static edu.slimsider.easybet.security.SecurityConstants.*;
-
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
@@ -39,7 +36,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     private List<String> disabledIds = new LinkedList<>();
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         String header = request.getHeader(HEADER_STRING);
 
         try {
@@ -58,38 +55,34 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
             response.addHeader("Access-Control-Expose-Headers", HEADER_STRING);
             response.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-            System.out.println(authenticationToken.getAuthorities());
             filterChain.doFilter(request, response);
-
         }
-        catch (IOException | ServletException | NullPointerException ioe) {ioe.printStackTrace();}
+        catch (JwtException e) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            response.getWriter().print("Authorization has failed. Your token was invalid or has been expired. Please try to re-login");
+        }
     }
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         String token = request.getHeader(HEADER_STRING);
         if (token != null) {
-            // parse the token.
-            String username;
-            String id;
-            try {
-                Claims claims = Jwts.parser()
-                        .setSigningKey(SECRET.getBytes())
-                        .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
-                        .getBody();
-                username = claims.getSubject();
-                id = claims.getId();
-            } catch(ExpiredJwtException eje) {
-                System.out.println("Expired token");
-                return null;
+            String username, id;
+            Claims claims = Jwts.parser()
+                    .setSigningKey(SECRET.getBytes())
+                    .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
+                    .getBody();
+            username = claims.getSubject();
+            id = claims.getId();
+            if(disabledIds.size()>1_000_000) {
+                disabledIds.clear();
             }
             if(disabledIds.contains(id)) {
-                System.out.println("Token has been disabled");
-                return null;
+                throw new JwtException("Token has been disabled");
             }
             disabledIds.add(id);
             if (username != null) {
                 User user = userService.getUser(username);
-                SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getRole());
+                SimpleGrantedAuthority authority = new SimpleGrantedAuthority(user.getRole().getValue());
                 List authorities = new LinkedList() {{add(authority);}};
                 return new UsernamePasswordAuthenticationToken(user, null, authorities);
             }

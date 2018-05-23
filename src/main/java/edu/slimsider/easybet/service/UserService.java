@@ -1,5 +1,6 @@
 package edu.slimsider.easybet.service;
 
+import edu.slimsider.easybet.model.Bet;
 import edu.slimsider.easybet.model.User;
 import edu.slimsider.easybet.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,9 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private BetService betService;
 
     public User createUser(User newUser) {
         return userRepository.save(newUser);
@@ -31,16 +35,32 @@ public class UserService {
     }
 
     public User getUser(long id) {
-        return this.userRepository.findById(id);
+        return this.userRepository.findOne(id);
     }
 
-    public User updateUser(long id, User user) {
-        User userToUpdate = getUser(id);
-        userToUpdate.setUsername(user.getUsername());
-        userToUpdate.setPassword(user.getPassword());
-        userToUpdate.setEmail(user.getEmail());
-        userToUpdate.setBalance(user.getBalance());
-        userToUpdate.setRole(user.getRole());
-        return createUser(userToUpdate);
+    public User updateUser(User user) {
+        return createUser(user);
+    }
+
+    public void resetUserBalance(Bet bet) {
+        for(User u : getAll()) {
+            if(u.getBets().contains(bet)) {
+                u.setBalance(u.getBalance() + bet.getStake());
+                u.getBets().remove(bet);
+                betService.deleteBet(bet.getId());
+                updateUser(u);
+                break;
+            }
+        }
+    }
+
+    public void payOut(Bet b) {
+        for(User u : getAll()) {
+            if(u.getBets().contains(b)) {
+                u.setBalance(u.getBalance() + (b.getOdds() * b.getStake()));
+                updateUser(u);
+                break;
+            }
+        }
     }
 }

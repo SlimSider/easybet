@@ -10,8 +10,8 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@DiscriminatorValue("Football")
-public class FootballMatch extends Match {
+@DiscriminatorValue("Basketball")
+public class BasketballMatch extends Match {
 
     @Column
     private int ht_home_score;
@@ -22,25 +22,12 @@ public class FootballMatch extends Match {
     @Column
     private int final_home_score;
 
-    @Column
-    private int final_away_score;
-
-    public FootballMatch(String home, String away, String competition, Date date, boolean active, Set<Event> events, String sport, int ht_home_score, int ht_away_score, int ft_home_score, int ft_away_score) {
-        super(home, away, competition, date, active, events, sport);
-        this.ht_home_score = ht_home_score;
-        this.ht_away_score = ht_away_score;
-        this.final_home_score = ft_home_score;
-        this.final_away_score = ft_away_score;
-    }
-
-    public FootballMatch() { }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof FootballMatch)) return false;
+        if (!(o instanceof BasketballMatch)) return false;
         if (!super.equals(o)) return false;
-        FootballMatch that = (FootballMatch) o;
+        BasketballMatch that = (BasketballMatch) o;
         return ht_home_score == that.ht_home_score &&
                 ht_away_score == that.ht_away_score &&
                 final_home_score == that.final_home_score &&
@@ -51,6 +38,19 @@ public class FootballMatch extends Match {
     public int hashCode() {
 
         return Objects.hash(super.hashCode(), ht_home_score, ht_away_score, final_home_score, final_away_score);
+    }
+
+    @Column
+    private int final_away_score;
+
+    public BasketballMatch() { }
+
+    public BasketballMatch(String home, String away, String competition, Date date, boolean active, Set<Event> events, String sport, int ht_home_score, int ht_away_score, int final_home_score, int final_away_score) {
+        super(home, away, competition, date, active, events, sport);
+        this.ht_home_score = ht_home_score;
+        this.ht_away_score = ht_away_score;
+        this.final_home_score = final_home_score;
+        this.final_away_score = final_away_score;
     }
 
     public int getHt_home_score() {
@@ -73,15 +73,15 @@ public class FootballMatch extends Match {
         return final_home_score;
     }
 
-    public void setFinal_home_score(int ft_home_score) {
-        this.final_home_score = ft_home_score;
+    public void setFinal_home_score(int final_home_score) {
+        this.final_home_score = final_home_score;
     }
 
     public int getFinal_away_score() {
         return final_away_score;
     }
 
-    public void setFinal_away_score(int ft_away_score) {
-        this.final_away_score = ft_away_score;
+    public void setFinal_away_score(int final_away_score) {
+        this.final_away_score = final_away_score;
     }
 }

@@ -1,7 +1,10 @@
 package edu.slimsider.easybet.model;
 
 
+import edu.slimsider.easybet.enums.Type;
+
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "`event`")
@@ -22,19 +25,31 @@ public class Event {
     private double awayOdds;
 
     @Column
-    private boolean status;
+    @Enumerated(EnumType.STRING)
+    private Type type;
 
     @Column
-    private String type;
+    private int line;
+
+    @Column
+    private boolean active;
 
     public Event() { }
 
-    public Event(double homeOdds, double drawOdds, double awayOdds, boolean status, String type) {
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public Event(double homeOdds, double drawOdds, double awayOdds, Type type, boolean active, int line) {
         this.homeOdds = homeOdds;
         this.drawOdds = drawOdds;
         this.awayOdds = awayOdds;
-        this.status = status;
         this.type = type;
+        this.line = line;
     }
 
     public Long getId() {
@@ -69,19 +84,38 @@ public class Event {
         this.awayOdds = awayOdds;
     }
 
-    public boolean isStatus() {
-        return status;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Event)) return false;
+        Event event = (Event) o;
+        return Double.compare(event.homeOdds, homeOdds) == 0 &&
+                Double.compare(event.drawOdds, drawOdds) == 0 &&
+                Double.compare(event.awayOdds, awayOdds) == 0 &&
+                Integer.compare(event.line, line) == 0 &&
+                Objects.equals(id, event.id) &&
+                Objects.equals(type, event.type);
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, homeOdds, drawOdds, awayOdds, type, line);
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line = line;
+    }
+
 }
