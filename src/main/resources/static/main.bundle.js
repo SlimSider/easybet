@@ -2907,6 +2907,7 @@ var AuthService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/do.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token_service__ = __webpack_require__("./src/app/service/token.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("./src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2916,6 +2917,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -2938,6 +2940,7 @@ var InterceptorService = /** @class */ (function () {
                 if (err.status == 401 || err.status == 403) {
                     _this.tokenService.logout();
                     _this.router.navigate(['login']);
+                    setTimeout(function () { return __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */].blockUi.stop(); }, 500);
                 }
             }
         });
@@ -2976,22 +2979,22 @@ var MatchService = /** @class */ (function () {
         this.api = api;
     }
     MatchService.prototype.getMatches = function (next, error, params, complete) {
-        this.api.getRequest("http://localhost:8080/match/get_all", next, error, params, complete);
+        this.api.getRequest("/match/get_all", next, error, params, complete);
     };
     MatchService.prototype.getSelectableMatches = function (next, error, params, complete) {
-        this.api.getRequest("http://localhost:8080/match/get_all_selectable", next, error, params, complete);
+        this.api.getRequest("/match/get_all_selectable", next, error, params, complete);
     };
     MatchService.prototype.getMatch = function (id, next, error, params, complete) {
-        this.api.getRequest("http://localhost:8080/match/get/" + id, next, error, params, complete);
+        this.api.getRequest("/match/get/" + id, next, error, params, complete);
     };
     MatchService.prototype.addMatch = function (match, next, error, complete) {
-        return this.api.postRequest("http://localhost:8080/match/add", match, next, error, complete);
+        return this.api.postRequest("/match/add", match, next, error, complete);
     };
     MatchService.prototype.deleteMatch = function (id, next, error, complete) {
-        this.api.deleteRequest('http://localhost:8080/match/delete_match/' + id, next, error, complete);
+        this.api.deleteRequest('/match/delete_match/' + id, next, error, complete);
     };
     MatchService.prototype.updateMatch = function (match, next, error, complete) {
-        this.api.putRequest('http://localhost:8080/match/update_match', match, next, error, complete);
+        this.api.putRequest('/match/update_match', match, next, error, complete);
     };
     MatchService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -3069,25 +3072,25 @@ var UserService = /** @class */ (function () {
         this.api = api;
     }
     UserService.prototype.getUsers = function (next, error, params, complete) {
-        this.api.getRequest('http://localhost:8080/admin/get_users', next, error, params, complete);
+        this.api.getRequest('/admin/get_users', next, error, params, complete);
     };
     UserService.prototype.getUserById = function (id, next, error, params, complete) {
-        this.api.getRequest('http://localhost:8080/user/get_user_id/' + id, next, error, params, complete);
+        this.api.getRequest('/user/get_user_id/' + id, next, error, params, complete);
     };
     UserService.prototype.getUserByUsername = function (username, next, error, params, complete) {
-        this.api.getRequest('http://localhost:8080/user/get_user_name/' + username, next, error, params, complete);
+        this.api.getRequest('/user/get_user_name/' + username, next, error, params, complete);
     };
     UserService.prototype.delete = function (id, next, error, complete) {
-        this.api.deleteRequest('http://localhost:8080/admin/delete_user/' + id, next, error, complete);
+        this.api.deleteRequest('/admin/delete_user/' + id, next, error, complete);
     };
     UserService.prototype.add = function (user, next, error, complete) {
-        this.api.postRequest('http://localhost:8080/register', user, next, error, complete);
+        this.api.postRequest('/register', user, next, error, complete);
     };
     UserService.prototype.login = function (user, next, error, complete) {
-        this.api.postRequest('http://localhost:8080/login', user, next, error, complete);
+        this.api.postRequest('/login', user, next, error, complete);
     };
     UserService.prototype.update = function (user, next, error, complete) {
-        this.api.putRequest('http://localhost:8080/user/update_user', user, next, error, complete);
+        this.api.putRequest('/user/update_user', user, next, error, complete);
     };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -3265,7 +3268,7 @@ module.exports = ".description {\r\n  text-align: center;\r\n}\r\n"
 /***/ "./src/app/user-betlist/user-betlist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Bet history</h1>\n<div class=\"example-container mat-elevation-z8\">\n  <mat-table #table [dataSource]=\"dataSource\">\n\n    <ng-container matColumnDef=\"stake\">\n      <mat-header-cell *matHeaderCellDef> Stake </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.stake}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"odds\">\n      <mat-header-cell *matHeaderCellDef> Odds </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.odds}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"won\">\n      <mat-header-cell *matHeaderCellDef> Won </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.won}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"in progress\">\n      <mat-header-cell *matHeaderCellDef> Won </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.active}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"return\">\n      <mat-header-cell *matHeaderCellDef> Possible profit </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.stake * element.odds}} </mat-cell>\n    </ng-container>\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n  </mat-table>\n</div>\n<p *ngIf=\"!dataSource.data.length\">You do not have any bets</p>\n"
+module.exports = "<h1>Bet history</h1>\n<div class=\"example-container mat-elevation-z8\">\n  <mat-table #table [dataSource]=\"dataSource\">\n\n    <ng-container matColumnDef=\"stake\">\n      <mat-header-cell *matHeaderCellDef> Stake </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.stake}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"odds\">\n      <mat-header-cell *matHeaderCellDef> Odds </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.odds}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"won\">\n      <mat-header-cell *matHeaderCellDef> Won </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.won}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"in progress\">\n      <mat-header-cell *matHeaderCellDef> In progress </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.active}} </mat-cell>\n    </ng-container>\n\n    <ng-container matColumnDef=\"return\">\n      <mat-header-cell *matHeaderCellDef> Possible profit </mat-header-cell>\n      <mat-cell *matCellDef=\"let element\"> {{element.stake * element.odds}} </mat-cell>\n    </ng-container>\n\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n    <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n  </mat-table>\n</div>\n<p *ngIf=\"!dataSource.data.length\">You do not have any bets</p>\n"
 
 /***/ }),
 

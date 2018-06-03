@@ -35,6 +35,7 @@ export class InterceptorService implements HttpInterceptor{
             if(err.status == 401 || err.status == 403) {
               this.tokenService.logout();
               this.router.navigate(['login']);
+              setTimeout(() => AppComponent.blockUi.stop(), 500);
             }
           }
         }
