@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "`match`",
+@Table(name = "match",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"home", "away", "date"})}
         )
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)

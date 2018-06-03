@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "`event`")
+@Table(name = "event")
 public class Event {
 
     @Column
